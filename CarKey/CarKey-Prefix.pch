@@ -1,0 +1,54 @@
+//
+//  CarKey.pch
+//  CarKey
+//
+//  Created by jiangyuanlu on 15/5/28.
+//  Copyright (c) 2015年 JYL. All rights reserved.
+//
+
+#ifndef CarKey_CarKey_pch
+#define CarKey_CarKey_pch
+
+#ifdef __OBJC__
+#ifdef DEBUG
+
+//导入公共头文件
+#import <UIKit/UIKit.h>
+#import "RequestManager.h"
+#import "UIView+Extension.h"
+
+//自定义
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+
+//自定义log输出
+#define JYLLog(...) NSLog(__VA_ARGS__)
+#else
+#define JYLLog(...)
+#endif
+
+
+
+// 颜色
+#define JYLColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define JYLColorWithA(r, g, b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#import "UIColor+Extension.h"
+
+
+// 随机色
+#define JYLRandomColor JYLColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+
+
+// 是否为iOS7
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+
+//#import "UIView+Extension.h"
+
+#define HTTP_BLOCK_URL @"http://172.18.8.75:8080/"
+
+#endif
+
+#endif
